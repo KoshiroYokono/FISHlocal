@@ -5,6 +5,16 @@ $(function() {
    // }))
 
    // トップから詳細ページへ
+   $(".audio-button").on( "click",(function() {
+     if ($("#audio").hasClass('on-playing')) {
+       document.getElementById("audio").pause();
+       $("#audio").removeClass("on-playing")
+     } else {
+       document.getElementById("audio").play();
+       $("#audio").addClass("on-playing")
+     }
+   }))
+
    $('.image').on( "click",(function() {
       if ($(this).hasClass('hidden-image')) {
          $(this).removeClass('hidden-image');
@@ -77,30 +87,30 @@ $(function() {
    }))
 
 
-   // $('.to-top').on("click",(function() {
-   //    // メーターをしまう
-   //    $(this).parent().fadeOut(1000);
-   //    $('.meter').animate({left: '-15%'}, 1200);
-   //    $('.meter').find('p').animate({right: 0}, 1200);
-   //    $('.meter').delay(1200).queue(function() {
-   //       $(this).css('display', 'none').dequeue();
-   //    });
-   //     $('.meter').find('p').delay(1200).queue(function() {
-   //        $(this).css({display:'none', right: '-3em'}).dequeue();
-   //     });
-   //     $('.move-box').delay(1200).queue(function() {
-   //        $(this).css({top: 0, height: 0}).dequeue();
-   //     });
-   //     $('.move-box').find('p').delay(1200).queue(function() {
-   //        $(this).css( 'right', '-4em').dequeue();
-   //     });
-   //     if($('.image').find('.select')) {
-   //        $('.select').removeClass('select').addClass('hidden-image');
-   //     }
-   //     // top画面表示
-   //    $('.image').delay(1000).fadeIn(1200);
-   //    $('.center-contents').css('display','inline-block').animate({opacity: 1.0, marginTop: '20%'}, 2000);
-   // }))
+   $('.to-top').on("click",(function() {
+      // メーターをしまう
+      $(this).parent().fadeOut(1000);
+      $('.meter').animate({left: '-15%'}, 1200);
+      $('.meter').find('p').animate({right: 0}, 1200);
+      $('.meter').delay(1200).queue(function() {
+         $(this).css('display', 'none').dequeue();
+      });
+       $('.meter').find('p').delay(1200).queue(function() {
+          $(this).css({display:'none', right: '-3em'}).dequeue();
+       });
+       $('.move-box').delay(1200).queue(function() {
+          $(this).css({top: 0, height: 0}).dequeue();
+       });
+       $('.move-box').find('p').delay(1200).queue(function() {
+          $(this).css( 'right', '-4em').dequeue();
+       });
+       if($('.image').find('.select')) {
+          $('.select').removeClass('select').addClass('hidden-image');
+       }
+       // top画面表示
+      $('.image').delay(1000).fadeIn(1200);
+      $('.center-contents').css('display','inline-block').animate({opacity: 1.0, marginTop: '20%'}, 2000);
+   }))
 
    function toTop() {
       $(this).parent().fadeOut(1000);
