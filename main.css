@@ -5,8 +5,16 @@ body {
    color: rgba(255,255,255,0.7);
 }
 
-p {
+p,div {
    margin: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+p:active {
+  background-color: transparent;
+  color: transparent;
 }
 
 
@@ -438,4 +446,8 @@ bottom: 10%;
    position: absolute;
    top: 0;
    right: -3em;
+}
+
+.audio-button {
+  cursor: pointer;
 }
